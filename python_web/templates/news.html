@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="'UTF-8">
+    <title>Новости</title>
+</head>
+<body>
+{% for item in news['news'] %}
+<h2>{{item['title']}}</h2>
+<div>{{item['content']}}</div>
+{% endfor %}
+
+{% set people_list = ['Ваня','Влад','Петя','Саша'] %}
+<ul>
+    {% for human in people_list %}
+    <li>{{ loop.index }} - {{ human }} {% if loop.first %} первый прибежал {% elif loop.last%} последний, за ним не занимать{%endif%}</li>
+    {% endfor %}
+</ul>
+
+</body>
+</html>
